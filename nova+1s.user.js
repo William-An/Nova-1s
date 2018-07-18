@@ -1,17 +1,18 @@
 // ==UserScript==
 // @name         Nova +1s
 // @namespace    https://github.com/William-An/Nova-1s
-// @version      1.0.0
+// @version      1.0.1
 // @description  Build for auto Xu
 // @author       WilliamMTK
 // @include      https://*
 // @match https://*
-// @connect novalive.rip
+// @connect xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com
 // @run-at document-end
 // @grant GM_xmlhttpRequest
 // @grant GM_log
 // @grant GM_setValue
 // @grant GM_getValue
+// @note Update Nova URL
 // ==/UserScript==
 
 function xu(){
@@ -26,7 +27,7 @@ function xu(){
     }
     var xuOptions = {};
     xuOptions.method = 'POST';
-    xuOptions.url = 'https://novalive.rip/user/checkin';
+    xuOptions.url = 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/user/checkin';
     // OnError?
     xuOptions.onload = function(response){
         var r = JSON.parse(response.responseText);
@@ -57,13 +58,14 @@ function login(){
         GM_setValue('password', password);
     }
     loginOptions.method = 'POST';
-    loginOptions.url = 'https://novalive.rip/auth/login';
+    loginOptions.url = 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/auth/login';
     loginOptions.data = `email=${username}&passwd=${password}&code=`
     // OnError?
     loginOptions.onload = function(response){
         var r = response;
+        GM_log(r);
         var finalUrl = r.finalUrl;
-        if(finalUrl != 'https://novalive.rip/user'){
+        if(finalUrl != 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/user'){
             GM_log('Nova +1s: ', 'Unable to Xu, Please enter your credentials again or check your internet');
         }else{
             GM_setValue('lastLogin', currentDay-1);

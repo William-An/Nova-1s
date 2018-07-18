@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         Nova +1s
 // @namespace    https://github.com/William-An/Nova-1s
-// @version      1.0.1
+// @version      1.0.2
 // @description  Build for auto Xu
 // @author       WilliamMTK
+// @updateURL    https://github.com/William-An/Nova-1s/raw/master/nova%2B1s.user.js
+// @downloadURL  https://github.com/William-An/Nova-1s/raw/master/nova%2B1s.user.js
+// @supportURL   https://github.com/William-An/Nova-1s/issues
 // @include      https://*
 // @match https://*
 // @connect xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com
@@ -12,7 +15,7 @@
 // @grant GM_log
 // @grant GM_setValue
 // @grant GM_getValue
-// @note Update Nova URL
+// @note Update URLs
 // ==/UserScript==
 
 function xu(){

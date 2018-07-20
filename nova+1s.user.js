@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nova +1s
 // @namespace    https://github.com/William-An/Nova-1s
-// @version      1.0.3
+// @version      1.0.4
 // @description  Build for auto Xu
 // @author       WilliamMTK
 // @updateURL    https://github.com/William-An/Nova-1s/raw/master/nova%2B1s.user.js
@@ -15,7 +15,7 @@
 // @grant GM_log
 // @grant GM_setValue
 // @grant GM_getValue
-// @note Complete Auth Process
+// @note Remove Auth Module
 // ==/UserScript==
 
 function xu(){
@@ -40,7 +40,7 @@ function xu(){
     GM_xmlhttpRequest(xuOptions);
 }
 
-function login(){
+/*function login(){
     GM_log('Nova +1s: ', 'Login begins');
     var lastDay = GM_getValue('lastLogin', (new Date()).getDay());
     var currentDay = (new Date()).getDay();
@@ -62,7 +62,7 @@ function login(){
     }
     loginOptions.method = 'POST';
     loginOptions.headers = {
-        Accept: 'application/json, text/javascript, */*; q=0.01',
+        Accept: 'application/json, text/javascript, *//*; q=0.01',
         Referer: 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/auth/login'
     }
     loginOptions.url = 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/auth/login';
@@ -81,12 +81,12 @@ function login(){
         }
     };
     GM_xmlhttpRequest(loginOptions);
-}
+}*/
 
 (function() {
     'use strict';
     try{
-        login();
+        // login();
         xu();
     }catch(err){
         GM_log(err);

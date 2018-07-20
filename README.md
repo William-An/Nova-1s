@@ -11,3 +11,4 @@ Nova-1s, 一个让你续一秒的userscript ;)
 
 ## TODO
 * [] Run only one time
+* [] Add Auto Login

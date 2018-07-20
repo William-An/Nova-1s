@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nova +1s
 // @namespace    https://github.com/William-An/Nova-1s
-// @version      1.0.2
+// @version      1.0.3
 // @description  Build for auto Xu
 // @author       WilliamMTK
 // @updateURL    https://github.com/William-An/Nova-1s/raw/master/nova%2B1s.user.js
@@ -15,7 +15,7 @@
 // @grant GM_log
 // @grant GM_setValue
 // @grant GM_getValue
-// @note Update URLs
+// @note Complete Auth Process
 // ==/UserScript==
 
 function xu(){
@@ -61,8 +61,12 @@ function login(){
         GM_setValue('password', password);
     }
     loginOptions.method = 'POST';
+    loginOptions.headers = {
+        Accept: 'application/json, text/javascript, */*; q=0.01',
+        Referer: 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/auth/login'
+    }
     loginOptions.url = 'https://xn--gfw-l68djrna64ei8mgrx0peuw7arpqnu1bi48d.xn--mmp-p18dn3y51wo4hc35ejee.com/auth/login';
-    loginOptions.data = `email=${username}&passwd=${password}&code=`
+    loginOptions.data = `email=${username}&passwd=${password}&code=&remember_me=week`;
     // OnError?
     loginOptions.onload = function(response){
         var r = response;
